@@ -61,7 +61,7 @@
 				window.console && console.time && console.time("Generating Frames");
 				
 				// The film div holds 15 canvas elements (or frames).
-				
+				/*
 				var film = $('<div>',{
 					className: 'film',
 					css:{
@@ -70,17 +70,27 @@
 						marginLeft: -frames.width/2, // Centering horizontally
 						top: -animation.offsetTop
 					}
+				});*/
+				var film = $('<div></div>').addClass( 'film' ).css({
+						height: frames.num*frames.height,
+						width: frames.width,
+						marginLeft: -frames.width/2, // Centering horizontally
+						top: -animation.offsetTop
 				});
 
 				// The animation holder hides the film with overflow:hidden,
 				// exposing only one frame at a time.
-				
+				/*
 				var animationHolder = $('<div>',{
 					className: 'shutterAnimationHolder',
 					css:{
 						width:animation.width,
 						height:animation.height
 					}
+				});*/
+				var animationHolder = $('<div></div>').addClass( 'shutterAnimationHolder' ).css({
+					width:animation.width,
+					height:animation.height
 				});
 				
 				for(var z=0;z<frames.num;z++){
