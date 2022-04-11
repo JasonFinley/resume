@@ -1,10 +1,34 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ResumeView from '../views/ResumeView.vue'
+import WorkFirstView from '../views/WorkFirstView.vue'
+import WorkSecondView from '../views/WorkSecondView.vue'
+import WorkThirdView from '../views/WorkThirdView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'Resume',
+    component: ResumeView
+  },
+  {
+    path: '/work1',
+    name: 'WorkFirst',
+    component: WorkFirstView
+  },
+  {
+    path: '/work2',
+    name: 'WorkSecond',
+    component: WorkSecondView
+  },
+  {
+    path: '/work3',
+    name: 'WordThird',
+    component: WorkThirdView
+  },
+  {
+    path: '/vue_hello_world',
+    name: 'HelloWorld',
     component: HomeView
   },
   {
