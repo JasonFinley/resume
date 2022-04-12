@@ -1,22 +1,22 @@
 <template>
-  <div class="work_2">
-      <h1>Jason Finley Start Second Work.</h1>
+  <div class="future">
+      <h1>Jason Finley Future.</h1>
   </div>
   <button type="button" class="btn btn-info position-absolute top-50 start-0" v-on:click="prePage"> {{btn_pre}} </button>
-	<button type="button" class="btn btn-info position-absolute top-50 end-0" v-on:click="nextPage"> {{btn_next}} </button>
 </template>
 
 <script>
 export default {
-  name: 'WorkSecond',
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Future',
   props: {
     msg: String
   },
   data(){
-    return {
-      btn_pre : "<=",
-      btn_next : "=>"
-    };
+	return {
+		btn_pre : "<=",
+		btn_next : "=>"
+	};
   },
   methods:{
     goPrePage: goMyPrePage,
@@ -25,14 +25,14 @@ export default {
     prePage : preMyPage,
   },
 }
-
-function goMyPrePage(){ this.$router.push('/work1'); }
-function goMyNextPage(){ this.$router.push('/work3'); }
+function goMyPrePage(){ this.$router.push('/work3'); }
+function goMyNextPage(){ this.$router.push('/'); }
 
 function preMyPage(){ myTransition( this.goPrePage ); }
 function nextMyPage(){ myTransition( this.goNextPage ); }
 function myTransition( nextPagefunc ){
   nextPagefunc();
+
 }
 
 </script>
@@ -40,7 +40,7 @@ function myTransition( nextPagefunc ){
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-.work_2{
+.future{
 	min-width: 800px;
     min-height: 680px;
     background-image: url( "https://picsum.photos/1800/900" );

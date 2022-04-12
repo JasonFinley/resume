@@ -6,7 +6,7 @@
             <div class="col border border-3 border-danger door-r-info">右門</div>
         </div>
       </section>
-      <button type="button" class="btn btn-info position-absolute bottom-8 end-0" v-on:click="nextPage">NEXT=></button>
+      <button type="button" class="btn btn-info position-absolute top-50 end-0" v-on:click="nextPage"> {{btn_next}} </button>
   </div>
 </template>
 
@@ -19,13 +19,19 @@ export default {
   props: {
     msg: String
   },
+  data(){
+    return {
+      btn_pre : "<=",
+      btn_next : "=>"
+    };
+  },
   methods:{
-    goPage: goMyWorkFirst,
+    goPage: goMyNextPage,
     nextPage: nextMyPage,
   },
 }
 
-function goMyWorkFirst(){ this.$router.push('/work1'); }
+function goMyNextPage(){ this.$router.push('/work1'); }
 function nextMyPage(){ 
     $( ".door-l-info" ).transition( { rotateY: '-130deg' }, 1000 );
     $( ".door-r-info" ).transition( { rotateY: '130deg'  }, 1000, this.goPage );
@@ -47,7 +53,7 @@ function nextMyPage(){
 
 .door-group{
     width: 100%;
-    height: 600px;
+    height: 680px;
     background-color: blue;
 }
 

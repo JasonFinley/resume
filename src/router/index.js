@@ -4,6 +4,7 @@ import ResumeView from '../views/ResumeView.vue'
 import WorkFirstView from '../views/WorkFirstView.vue'
 import WorkSecondView from '../views/WorkSecondView.vue'
 import WorkThirdView from '../views/WorkThirdView.vue'
+import FutureView from '../views/FutureView.vue'
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     path: '/work3',
     name: 'WordThird',
     component: WorkThirdView
+  },
+  {
+    path: '/future',
+    name: 'Future',
+    component: FutureView
   },
   {
     path: '/vue_hello_world',

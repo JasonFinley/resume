@@ -6,6 +6,7 @@
         <router-link class="nav-link" to="/work1">First</router-link>
         <router-link class="nav-link" to="/work2">Second</router-link>
         <router-link class="nav-link" to="/work3">Third</router-link>
+        <router-link class="nav-link" to="/future">Future</router-link>
         <router-link class="nav-link" to="/vue_hello_world">HelloWorld</router-link>
         <router-link class="nav-link" to="/about">About</router-link>
       </div>
