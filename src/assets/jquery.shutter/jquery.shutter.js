@@ -35,19 +35,20 @@
 		
 		window.setTimeout(function(){
 	
-			var frames = {num:15, height:1000, width:1000},
-				slices = {num:8, width: 416, height:500, startDeg:30},
-				animation = {
+			var frames = {num:15, height:1000, width:1000};
+			//var	slices = {num:8, width: 416, height:500, startDeg:30},
+			var	slices = {num:8, width: 624, height:750, startDeg:30};
+			var	animation = {
 					width : element.width(),
 					height : element.height(),
 					offsetTop: (frames.height-element.height())/2
-				},
+				};
 				
 				// This will calculate the rotate difference between the
 				// slices of the shutter. (2*Math.PI equals 360 degrees in radians):
 				
-				rotateStep = 2*Math.PI/slices.num, 
-				rotateDeg = 30;
+			var	rotateStep = 2*Math.PI/slices.num; 
+			var	rotateDeg = 30;
 
 			// Calculating the offset			
 			slices.angleStep = ((90 - slices.startDeg)/frames.num)*Math.PI/180;
@@ -136,6 +137,7 @@
 						}
 						
 						// Drawing the shutter image
+						//c.drawImage(img,-slices.width/2,-(frames.height/2 + offset));
 						c.drawImage(img,-slices.width/2,-(frames.height/2 + offset));
 						
 						// Reverting back to the saved settings above.
