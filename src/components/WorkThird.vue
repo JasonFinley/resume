@@ -35,14 +35,12 @@ function preMyPage(){ myTransition( this.goPrePage ); }
 function nextMyPage(){ myTransition( this.goNextPage ); }
 function myTransition( nextPagefunc ){
 
-  console.log( $( window ).width() );
-  console.log( $( window ).height() );
   // eslint-disable-next-line no-constant-condition
-  $(".work_3").addClass( "onFire" ).animate( {letterSpacing: "20px" }, 2000, function(){
+  $(".work_3").addClass( "onFire" ).animate( { letterSpacing: "20px" }, 1000, function(){
     start();
     $( "#btn_pre" ).addClass( "onFireRed" );
     $( "#btn_next" ).addClass( "onFireRed" );
-    setTimeout( nextPagefunc, 2800 );
+    $( "#frame_fire" ).fadeTo( 2000, 0.8, nextPagefunc );
   });
 }
 
