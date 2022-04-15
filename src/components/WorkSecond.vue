@@ -1,25 +1,21 @@
 <template>
   <div class="work_2">
     <div class="container container_bg">
-      <div class="msg fs-1 font_chg_1">1 Jason Work.</div>
-      <div class="msg fs-1 font_ml_2">2 Jason  Work.</div>
-      <div class="msg fs-1 font_mr_3">3 Jason Finley Snd Work.</div>
-      <div class="msg fs-1">4 Jasonecond Work.</div>
-      <div class="msg fs-1 font_mr_4">5 Jasoecond Work.</div>
-      <div class="msg fs-1 font_msslow_3">6 Jason cond Work.</div>
-      <div class="msg fs-1">7 Jasod Work.</div>
-      <div class="msg fs-1 font_msp_4">8 Jason Second Work.</div>
-      <div class="msg fs-1 animate__animated animate__lightSpeedInLeft animate__slow">9 Jason Fcond Work.</div>
-      <div class="msg fs-1 animate__fadeInTopLeft">10 Jason FSecond Work.</div>
-      <div class="msg fs-1 font_ml_4">11 Jasonond Work.</div>
+      <div class="container_info">
+        <ul class="text-start text-light fs-2">
+          <li class="fs-1 font_flash">精天科技</li>
+          <li class="font_ml_2">產品：車用導航(Embedded Linux)</li>
+          <li class="font_mr_3">我擔任資深研發工程師，使用C/C++</li>
+          <li class="font_msp_4">負責客戶UI/UX及Library應用研發</li>
+          <li class="animate__animated animate__fadeInTopLeft animate__slow">輔導新進人員成長，快速融入團隊</li>
+          <li class="font_mr_4">協助Android項目API介接Library</li>
+        </ul>
+      </div>
     </div>
   </div>
   <span id="my_trans" v-if="trans.isShow">
     <Transition>
       <img class="transition_bg" src='./../assets/carline.jpg' />
-    </Transition>
-    <Transition>
-      <img class="transition_car_w" src='./../assets/car_white.png' />
     </Transition>
     <Transition
       appear
@@ -33,6 +29,9 @@
       @leave-cancelled="onLeaveCancelled"
     >  
       <img class="lastcar" src='./../assets/car_yellow.png' />
+    </Transition>
+    <Transition>
+      <img class="transition_car_w" src='./../assets/car_white.png' />
     </Transition>
   </span>
   <button type="button" class="btn btn-info position-absolute top-50 start-0" v-on:click="prePage"> {{btn_pre}} </button>
@@ -91,7 +90,8 @@ function onMyEnter( el, done ){
   car_slow.animate( { left : "2000px" }, 2500, function(){
       car_slow.css( 'transform', 'scaleX(1)' )
           .animate( { bottom : "-100px" } )
-          .animate( { left : "-500px" }, 1500, done );
+          .animate( { left : "1000px" }, 1000 )
+          .animate( { left : "-500px" }, 500, done );
   });                   
 }
 
@@ -124,12 +124,11 @@ function goMyTransition( nextPagefunc ){
   width: 50%;
   height: 680px;
   position: relative;
-  color: rgb(230, 230, 230);
   background-color: #3c3c3c77;
   background-position: center;
   background-repeat: no-repeat;
   animation-name: container_bg_action;
-  animation-duration:2s; 
+  animation-duration:1.5s; 
 }
 
 @keyframes container_bg_action{
@@ -137,71 +136,60 @@ function goMyTransition( nextPagefunc ){
     to{ top : 0px }
 }
 
-.container_bg_trex {
-  transition: 2s ease-in-out;
-  transform: rotate(1800deg);
+.container_info{
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -70%);
 }
 
-.font_chg_1{             
-    color: rgb(230, 230, 230);
-    animation-name: font_chg_color;
-    animation-duration:2s;
-}
-@keyframes font_chg_color{
-    from{ color : black; }
-    to{ color : rgb(230, 230, 230); }
+.font_flash{             
+    animation-name: flash;
+    animation-duration:2.5s;
 }
 
 .font_ml_2{             
     position: relative;
-    color: rgb(230, 230, 230);
-    animation-name: font_mv_l_2000;
+    animation-name: backInLeft;
     animation-duration:2s;
 }
 .font_ml_3{             
     position: relative;
-    color: rgb(230, 230, 230);
     animation-name: font_mv_l_2000;
     animation-duration:3s;
 }
 .font_ml_4{             
     position: relative;
-    color: rgb(230, 230, 230);
     animation-name: font_mv_l_2000;
     animation-duration:4s;
 }
 
 .font_mr_2{             
     position: relative;
-    color: rgb(230, 230, 230);
     animation-name: font_mv_r_2000;
     animation-duration:2s;
 }
 .font_mr_3{             
     position: relative;
-    color: rgb(230, 230, 230);
-    animation-name: font_mv_r_2000;
+    animation-name: backInRight;
     animation-duration:3s;
 }
 .font_mr_4{             
     position: relative;
-    color: rgb(230, 230, 230);
     animation-name: font_mv_rt_2000;
     animation-duration:4s;
 }
 
 .font_msp_4{             
     position: relative;
-    color: rgb(230, 230, 230);
     animation-name: font_mvsp_2000;
     animation-duration:4s;
 }
 
 .font_msslow_3{             
     position: relative;
-    color: rgb(230, 230, 230);
-    animation-name: font_mvslow_200;
-    animation-duration:3s;
+    animation-name: zoomInLeft;
+    animation-duration:4s;
 }
 
 @keyframes font_mv_l_2000{
@@ -220,8 +208,8 @@ function goMyTransition( nextPagefunc ){
 }
 
 @keyframes font_mvsp_2000 {
-  0%   {left: -2000px; top: 1000px;}
-  25%  {left: 200px; top: -100px;}
+  0%   {left: 2000px; top: 1000px;}
+  75%  {left: -50px; top: -30px;}
   100% {left: 0px; top: 0px;}
 }
 

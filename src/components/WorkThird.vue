@@ -1,7 +1,33 @@
 <template>
   <div class="work_3">
-      <h1>Jason Finley Start Third Work.</h1>
-      <canvas id="frame_fire"></canvas>
+	<div class="container_bg">
+      <h1>忠山實業</h1>
+		<div class="pro_1">
+			<h1>產品：塑膠紡織</h1>
+			<h1>例如：寵物飼料袋，米袋</h1>
+		</div>
+		<div class="pro_2">
+			<h1>使用C/C++和MySQL實作進銷存</h1>
+			<h1>各類營業表單</h1>
+		</div>
+	</div>
+	<span id="my_trans" v-if="trans.isShow">
+		<Transition
+		appear
+		@before-enter="onBeforeEnter"
+		@enter="onEnter"
+		@after-enter="onAfterEnter"
+		@enter-cancelled="onEnterCancelled"
+		@before-leave="onBeforeLeave"
+		@leave="onLeave"
+		@after-leave="onAfterLeave"
+		@leave-cancelled="onLeaveCancelled"
+		>
+		<div class="truck"></div>
+		</Transition>
+		<img class="move_per" src='./../assets/move_1.png' />
+	</span>
+    <canvas id="frame_fire"></canvas>
   </div>
   <button id="btn_pre" type="button" class="btn btn-info position-absolute top-50 start-0" v-on:click="prePage"> {{btn_pre}} </button>
   <button id="btn_next" type="button" class="btn btn-info position-absolute top-50 end-0" v-on:click="nextPage"> {{btn_next}} </button>
@@ -17,7 +43,8 @@ export default {
   data(){
     return {
       btn_pre : "<=",
-      btn_next : "=>"
+      btn_next : "=>",
+		trans : { isShow : true, myTransCallBack : null },
     };
   },
   methods:{
@@ -25,7 +52,38 @@ export default {
     goNextPage: goMyNextPage,
     nextPage: nextMyPage,
     prePage : preMyPage,
+
+    onBeforeEnter: (el)=>{console.log("onBeforeEnter", el); },
+    onEnter: onMyEnter,
+    onAfterEnter : onMyAfterEnter,
+    onEnterCancelled: (el)=>{ console.log("onEnterCancelled", el); },
+    onBeforeLeave: (el)=>{console.log("onBeforeLeave", el); },
+    onLeave: (el, done)=>{ console.log("onLeave", el, done); },
+    onAfterLeave: (el)=>{ console.log("onAfterLeave", el); },
+    onLeaveCancelled: (el)=>{ console.log("onLeaveCancelled", el); },
+
   },
+}
+
+function onMyEnter( el, done ){
+  var car_slow = $(".truck");
+  console.log("onEnter", el, done);
+  $(".pro_1").animate( { left : "0px" }, 1500, function(){
+	$(".move_per").animate( { bottom : "400px" }, 600 ).animate( { bottom : "0px" }, 300 );
+  }).animate( { bottom : "0px" }, 600 );  
+  
+  $(".pro_2").animate( { left : "0px" }, 1500 ).animate( { left : "0px" }, 1000, function(){
+	$(".move_per").animate( { bottom : "285px" }, 1000 ).fadeOut();
+  } ).animate( { bottom : "0px" }, 1000 );
+
+  car_slow.animate( { left : "250px" }, 1500, function(){
+	car_slow.animate( { left : "250px" }, 1200 ).animate( { left : "-1000px" }, 1000, done );
+  });        
+}
+
+function onMyAfterEnter( el ){
+  console.log("onAfterEnter", el); 
+  this.trans.isShow = false;
 }
 
 function goMyPrePage(){ this.$router.push('/work2'); }
@@ -115,6 +173,7 @@ function update() {
 .work_3{
 	min-width: 800px;
     min-height: 680px;
+	position: relative;
     background-image: url( "https://picsum.photos/1800/900" );
     background-color: #b7b7b7;
     background-position: center;
@@ -140,6 +199,49 @@ canvas {
 .onFireRed{
     background: red;
     transition: 3s;
+}
+
+.container_bg{
+  width: 50%;
+  height: 680px;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  position: relative;
+  background-color: #3c3c3c77;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.truck{
+  left:2250px;
+  bottom: 0px;
+  height: 300px;
+  width: 863px;
+  position: absolute;
+  background-image: url( './../assets/car_truck.png' );
+  background-position: center;
+  background-repeat: no-repeat;
+//  animation-name: truck_move;
+//  animation-duration: 8s;
+}
+.pro_1{
+  position: relative;
+	left:2000px;
+	bottom: -375px;
+}
+
+.pro_2{
+  position: relative;
+  left:2000px;
+  bottom: -275px;
+}
+
+.move_per{
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 </style>
