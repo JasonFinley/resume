@@ -15,7 +15,7 @@
   </div>
   <span id="my_trans" v-if="trans.isShow">
     <Transition>
-      <img class="transition_bg" src='./../assets/carline.jpg' />
+      <img class="transition_bg" v-if="trans.isShow" src='./../assets/carline.jpg' />
     </Transition>
     <Transition
       appear
@@ -28,10 +28,10 @@
       @after-leave="onAfterLeave"
       @leave-cancelled="onLeaveCancelled"
     >  
-      <img class="lastcar" src='./../assets/car_yellow.png' />
+      <img class="lastcar" v-if="trans.isShow" src='./../assets/car_yellow.png' />
     </Transition>
     <Transition>
-      <img class="transition_car_w" src='./../assets/car_white.png' />
+      <img class="transition_car_w" v-if="trans.isShow" src='./../assets/car_white.png' />
     </Transition>
   </span>
   <button type="button" class="btn btn-info position-absolute top-50 start-0" v-on:click="prePage"> {{btn_pre}} </button>

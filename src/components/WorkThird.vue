@@ -23,9 +23,9 @@
 		@after-leave="onAfterLeave"
 		@leave-cancelled="onLeaveCancelled"
 		>
-		<div class="truck"></div>
+		<div class="truck" v-if="trans.isShow"></div>
 		</Transition>
-		<img class="move_per" src='./../assets/move_1.png' />
+		<img class="move_per" v-if="trans.isShow" src='./../assets/move_1.png' />
 	</span>
     <canvas id="frame_fire"></canvas>
   </div>
