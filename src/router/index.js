@@ -5,6 +5,7 @@ import WorkFirstView from '../views/WorkFirstView.vue'
 import WorkSecondView from '../views/WorkSecondView.vue'
 import WorkThirdView from '../views/WorkThirdView.vue'
 import FutureView from '../views/FutureView.vue'
+import CollectionView from '../views/CollectionView.vue'
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/future',
     name: 'Future',
     component: FutureView
+  },
+  {
+    path: '/collection',
+    name: 'Collection',
+    component: CollectionView
   },
   {
     path: '/vue_hello_world',

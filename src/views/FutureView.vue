@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Future msg="Welcome to Second Work"/>
+    <Future msg="Welcome to Future"/>
   </div>
 </template>
 

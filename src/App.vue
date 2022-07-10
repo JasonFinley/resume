@@ -7,6 +7,7 @@
         <router-link class="nav-link" to="/work2">Second</router-link>
         <router-link class="nav-link" to="/work3">Third</router-link>
         <router-link class="nav-link" to="/future">Future</router-link>
+        <router-link class="nav-link" to="/collection">Collection</router-link>
       </div>
     </div>
   </nav>

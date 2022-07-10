@@ -28,6 +28,7 @@
     </div>
   </div>
   <button type="button" class="btn btn-info position-absolute top-50 start-0" v-on:click="prePage"> {{btn_pre}} </button>
+	<button type="button" class="btn btn-info position-absolute top-50 end-0" v-on:click="nextPage"> {{btn_next}} </button>
 </template>
 
 <script>
@@ -51,13 +52,12 @@ export default {
   },
 }
 function goMyPrePage(){ this.$router.push('/work3'); }
-function goMyNextPage(){ this.$router.push('/'); }
+function goMyNextPage(){ this.$router.push('/collection'); }
 
 function preMyPage(){ myTransition( this.goPrePage ); }
 function nextMyPage(){ myTransition( this.goNextPage ); }
 function myTransition( nextPagefunc ){
   nextPagefunc();
-
 }
 
 </script>
