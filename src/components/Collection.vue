@@ -1,17 +1,36 @@
 <template>
   <div class="conllection_bg">
     <div>
-        <h2>作品集</h2>
-        <div class="music_nft">
-            <a href="https://free-creator-music-nft.netlify.app/" target="_blank">
-                <img src="../../public/music_nft.png" width="600"/>
-            </a>
-            <div class="music_nft_bg">
-                <div class="music_nft_info">
-                  <div>Music NFT</div>
-                  <div>音樂自由創作者的地方</div>
-                </div>
-            </div>
+        <h2 style="color:#000000">作品集</h2>
+        <div>
+          <p style="color:#ee00ee;font-size:30px">Music NFT</p>
+          <div class="conllection_item">
+              <a href="https://free-creator-music-nft.netlify.app/" target="_blank">
+                  <img src="../../public/music_nft.png" width="600"/>
+              </a>
+              <div class="hide_info_bg">
+                  <div class="hide_info">
+                    <div>Music NFT</div>
+                    <div>音樂自由創作者的地方</div>
+                  </div>
+              </div>
+          </div>
+          <div>
+            <a href="https://rinkeby.etherscan.io/address/0x3e0Ac86BB0FDD43a299fc57E7D116A4dDa685081" target="_blank">合約地址 : 0x3e0Ac86BB0FDD43a299fc57E7D116A4dDa685081</a>
+          </div>
+        </div>
+        <div>
+          <p style="color:#ee00ee;font-size:30px">The 12 Factor App</p>
+          <div class="conllection_item">
+              <a href="https://12factor.netlify.app/" target="_blank">
+                  <img src="../../public/12factor.png" width="600"/>
+              </a>
+              <div class="hide_info_bg">
+                  <div class="hide_info">
+                    <div>十二因子應用程式</div>
+                  </div>
+              </div>
+          </div>
         </div>
     </div>
     <button type="button" class="btn btn-info position-absolute top-50 start-0" v-on:click="prePage"> {{btn_pre}} </button>
@@ -62,33 +81,29 @@ function myTransition( nextPagefunc ){
     background-size: cover;
 }
 
-.music_nft{
+.conllection_item{
     position: relative;
 }
 
-.music_nft_image{
-    position: relative;
-}
-
-.music_nft_bg{
+.hide_info_bg{
     position: absolute;
     background-color: rgba( 0, 0, 0, 0.7);
     top: 50%;
     left: 50%;
     width: 0px;
     font-size: 0px;
-    height: 406px;
+    height: 300px;
     transform: translate(-50%,-50%);
 }
 
-.music_nft:hover .music_nft_bg{
+.conllection_item:hover .hide_info_bg{
     font-size: 30px;
     width: 600px;
     animation-name: fadeIn;
     animation-duration: 1s;
 }
 
-.music_nft_info{
+.hide_info{
     position: relative;
     left: 50%;
     top: 50%;
