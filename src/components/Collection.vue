@@ -3,7 +3,7 @@
     <div>
         <h2 style="color:#000000">作品集</h2>
         <div>
-          <p style="color:#ee00ee;font-size:30px">Music NFT</p>
+          <p style="color:#ee00ee;font-size:30px">Find Music NFT</p>
           <div class="conllection_item">
               <a href="https://find-music-nft.netlify.app" target="_blank">
                   <img src="../../public/music_nft.png" width="600"/>
