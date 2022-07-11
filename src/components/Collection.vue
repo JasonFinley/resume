@@ -5,12 +5,12 @@
         <div>
           <p style="color:#ee00ee;font-size:30px">Music NFT</p>
           <div class="conllection_item">
-              <a href="https://free-creator-music-nft.netlify.app/" target="_blank">
+              <a href="https://find-music-nft.netlify.app" target="_blank">
                   <img src="../../public/music_nft.png" width="600"/>
               </a>
               <div class="hide_info_bg">
                   <div class="hide_info">
-                    <div>Music NFT</div>
+                    <div>Find Music NFT</div>
                     <div>音樂自由創作者的地方</div>
                   </div>
               </div>
