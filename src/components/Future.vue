@@ -21,7 +21,7 @@
       </vue-particles>
       <div class="msg text-start">
         <ul class="fs-1">未來期望
-          <li class="fs-3">在自學期間，發現前端工程師，很多套件可以使用，有趣又好玩。</li>
+          <li class="fs-3">前端工程師，很多套件可以使用，有趣又好玩。</li>
           <li class="fs-3">希望能繼續往這方向發展。</li>
         </ul>
       </div>
