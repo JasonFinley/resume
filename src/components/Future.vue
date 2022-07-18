@@ -21,8 +21,10 @@
       </vue-particles>
       <div class="msg text-start">
         <ul class="fs-1">未來期望
-          <li class="fs-3">前端工程師，很多套件可以使用，有趣又好玩。</li>
-          <li class="fs-3">希望能繼續往這方向發展。</li>
+          <li class="fs-3">區塊鏈是未來的趨勢。</li>
+          <li class="fs-3">所以擁抱趨勢，了解趨勢。</li>
+          <li class="fs-3">如何應用和如何減少GAS費，在未來是重要的課題。</li>
+          <li class="fs-3">以我多年的程式經驗，學習新技術很快並能加以應用。</li>
         </ul>
       </div>
     </div>
