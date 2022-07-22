@@ -16,7 +16,7 @@
               </div>
           </div>
           <div>
-            <a href="https://rinkeby.etherscan.io/address/0x3A268aeF6350c80990993313c69771b586083E16" target="_blank">合約地址 : 0x3A268aeF6350c80990993313c69771b586083E16</a>
+            <a href="https://rinkeby.etherscan.io/address/0x5AE502DAb01d330a8DDc62f7B44AF857aA3b7906" target="_blank">合約地址 : 0x5AE502DAb01d330a8DDc62f7B44AF857aA3b7906</a>
           </div>
         </div>
         <div>
